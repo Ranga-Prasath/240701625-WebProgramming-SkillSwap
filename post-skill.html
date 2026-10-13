@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Skill - SkillSwap</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">🔄 SkillSwap</a>
+            <div class="nav-links" id="nav-links">
+                <!-- JS will fill this based on login state -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-container">
+
+        <!-- Post Skill Form Section: Contains the input form for posting a skill -->
+        <div id="post-form-section">
+            <div class="form-card" style="max-width: 550px;">
+                <h2>Post a Skill</h2>
+                <p class="subtitle">Share what you can teach and what you want to learn</p>
+
+                <!-- Error message container (filled dynamically by JavaScript) -->
+                <div class="error-message" id="error-message"></div>
+
+                <!-- Form to handle posting a skill -->
+                <form id="post-skill-form" onsubmit="handlePostSkill(event)">
+
+                    <!-- Skill student can teach -->
+                    <div class="form-group">
+                        <label for="can-teach">Skill I Can Teach *</label>
+                        <input type="text" id="can-teach" placeholder="e.g. Python Programming" required>
+                    </div>
+
+                    <!-- Skill student wants to learn in return -->
+                    <div class="form-group">
+                        <label for="want-to-learn">Skill I Want to Learn *</label>
+                        <input type="text" id="want-to-learn" placeholder="e.g. Guitar" required>
+                    </div>
+
+                    <!-- Category selection dropdown -->
+                    <div class="form-group">
+                        <label for="category">Category *</label>
+                        <select id="category" required>
+                            <option value="">Select a category</option>
+                            <option value="Programming">Programming</option>
+                            <option value="Music">Music</option>
+                            <option value="Art">Art</option>
+                            <option value="Language">Language</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Description textarea with character counter -->
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" placeholder="Tell others more about your skill and experience..." maxlength="300" oninput="updateCharCount()"></textarea>
+                        <p style="font-size: 12px; color: #999; text-align: right;"><span id="char-count">0</span>/300</p>
+                    </div>
+
+                    <!-- Availability options dropdown -->
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <select id="availability">
+                            <option value="Flexible">Flexible</option>
+                            <option value="Weekdays">Weekdays</option>
+                            <option value="Weekends">Weekends</option>
+                            <option value="Both">Both</option>
+                        </select>
+                    </div>
+
+                    <!-- Mode of exchange dropdown -->
+                    <div class="form-group">
+                        <label for="mode">Mode</label>
+                        <select id="mode">
+                            <option value="Both">Both</option>
+                            <option value="In-Person">In-Person</option>
+                            <option value="Online">Online</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary form-btn">Post Skill</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Post Success Section: Shown after a skill is successfully posted -->
+        <div id="post-success-section" style="display: none;">
+            <div class="success-card">
+                <div class="checkmark">✅</div>
+                <h2>Skill Posted Successfully!</h2>
+                <p>Your skill is now visible to other students.</p>
+                <div id="posted-skill-summary">
+                    <!-- JS fills this -->
+                </div>
+                <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+                    <button class="btn btn-primary" onclick="resetPostForm()">Post Another Skill</button>
+                    <a href="browse.html" class="btn btn-success">Browse Skills</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/app.js"></script>
+</body>
+</html>

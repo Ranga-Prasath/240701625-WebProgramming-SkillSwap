@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - SkillSwap</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">🔄 SkillSwap</a>
+            <div class="nav-links" id="nav-links">
+                <!-- JS will fill this based on login state -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-container">
+
+        <!-- Profile Container: Loaded dynamically by JavaScript based on logged-in user -->
+        <div id="profile-container">
+            <!-- JS will populate this with:
+                - Profile header card (avatar, name, email, college)
+                - Stats row (skills posted count, swap requests count)  
+                - 'My Posted Skills' section heading
+                - List of user's skills with delete buttons
+                - Or empty state if no skills posted
+            -->
+        </div>
+
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/app.js"></script>
+</body>
+</html>
